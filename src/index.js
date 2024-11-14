@@ -35,11 +35,16 @@ function Pizza() {
 }
 
 function Footer() {
+  const hours = new Date().getHours();
+  const openHours = 12;
+  const closedHours = 22;
+  const isOpen = hours >= openHours && hours <= closedHours;
+
+  console.log(isOpen);
+
   return (
     <footer>{new Date().toLocaleDateString()}. We're currently open</footer>
   );
-  //return React.createElement('footer', null, "We're currently open")
-  /* per mostrare quanto sarebbe difficile creare componenti senza il JSX */
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
