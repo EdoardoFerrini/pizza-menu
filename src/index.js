@@ -75,12 +75,14 @@ function Menu() {
   return (
     <main className="menu">
       <h2>Our Menu</h2>
-      {numPizzas > 0 && (
+      {numPizzas > 0 ? (
         <ul className="pizzas">
-        {pizzaData.map(pizza=>(
-          <Pizza pizzaObj={pizza} key={pizza.name} />
-        ))}
-      </ul>
+          {pizzaData.map((pizza) => (
+            <Pizza pizzaObj={pizza} key={pizza.name} />
+          ))}
+        </ul>
+      ) : (
+        <p>We're still working on our menu. Please come back later</p>
       )}
       {/*<Pizza
       name="Pizza Margherita"
@@ -122,13 +124,17 @@ function Footer() {
 
   return (
     <footer className="footer">
-      {isOpen && (
+      {isOpen ? (
         <div className="order">
-        <p>We're open until {closedHours}:00. Come to visit us or order online.</p>
-        <button className="btn">Order</button>
+          <p>
+            We're open until {closedHours}:00. Come to visit us or order online.
+          </p>
+          <button className="btn">Order</button>
         </div>
-        
-        
+      ) : (
+        <p>
+          We're happy to welcome you between {openHours}:00 and {closedHours}:00
+        </p>
       )}
     </footer>
   );
