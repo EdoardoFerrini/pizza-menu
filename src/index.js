@@ -76,11 +76,15 @@ function Menu() {
     <main className="menu">
       <h2>Our Menu</h2>
       {numPizzas > 0 ? (
-        <ul className="pizzas">
-          {pizzaData.map((pizza) => (
-            <Pizza pizzaObj={pizza} key={pizza.name} />
-          ))}
-        </ul>
+        <>
+        Authentic Italian cuisine. 6 creative dishes to choose from. All
+        from our stone oven, all organic, all delicious
+          <ul className="pizzas">
+            {pizzaData.map((pizza) => (
+              <Pizza pizzaObj={pizza} key={pizza.name} />
+            ))}
+          </ul>
+        </>
       ) : (
         <p>We're still working on our menu. Please come back later</p>
       )}
@@ -143,8 +147,8 @@ function Order({ closedHours, openHours }) {
   return (
     <div className="order">
       <p>
-        We're open from {openHours}:00 until {closedHours}:00. Come to visit us or
-        order online.
+        We're open from {openHours}:00 until {closedHours}:00. Come to visit us
+        or order online.
       </p>
       <button className="btn">Order</button>
     </div>
